@@ -24,21 +24,31 @@ function divGenerator (number) {
 
 
 
-divGenerator(10);
+divGenerator(30);
 const gridDivs = document.querySelectorAll(".grid");
-console.log(gridDivs.length);
 
-gridDivs.forEach((div) => {
-    div.addEventListener("mouseover", (e) => {
-
+function changeDivsColor() {
           const randomRGBNone = Math.floor(Math.random() * 256);
           const randomRGBNtwo = Math.floor(Math.random() * 256);
           const randomRGBNthree = Math.floor(Math.random() * 256);
-          const randomColor = `rgb(${ randomRGBNone}, ${randomRGBNtwo}, ${randomRGBNthree})`
-        div.style.backgroundColor = randomColor;
-        div.removeEventListener("mouseover", (e))
+          const randomColor = `rgb(${ randomRGBNone}, ${randomRGBNtwo}, ${randomRGBNthree})`;
+        return randomColor;
+      
+        
+
+ }
+console.log(gridDivs.length);
+
+gridDivs.forEach((div) => {
+    div.addEventListener("mouseover",() => {
+        div.style.backgroundColor = changeDivsColor()
+        
+    })
+
+
     });
-})
+    
+
 
 
 

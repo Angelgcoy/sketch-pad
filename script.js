@@ -1,7 +1,10 @@
 const container = document.querySelector(".container");
+const createButton = document.createElement("button");
+                       createButton.id = "gridButton"
+                       createButton.textContent = "Hola mundo"
+                       
 
-
-
+//Funcion para crear el grid
 function divGenerator (number) {
     
     if (number < 0 || number > 64) {
@@ -22,11 +25,11 @@ function divGenerator (number) {
    }
 }
 
-
-
 divGenerator(10);
 const gridDivs = document.querySelectorAll(".grid");
 
+
+//retorna una varaible con un color rgb aleatorio
 function rgbColor() {
           const randomRGBNone = Math.floor(Math.random() * 256);
           const randomRGBNtwo = Math.floor(Math.random() * 256);
@@ -35,28 +38,28 @@ function rgbColor() {
         return randomColor;       
  };
 
-
 function changeColor(objective) {
     return objective.style.backgroundColor = rgbColor(); 
     
 }
-//ESTOY INTENTANDO QUE CHANGE COLOR SEA UNA PARAMETRO EN EL ADDEVENT PARA PODER PONER ALGO QUE LO DESACTIVE ADENTRO.
-//necesito que la funcion sea un paramnetro para poder mencionarlo en el remoedor de addeventlistener
-console.log(gridDivs.length);
 
+
+ 
 gridDivs.forEach((div) => { 
-    div.addEventListener("mouseover", () => {
-        changeColor(div)
-    }, {once: true});
-  
-     
-    });
-    
+    div.addEventListener("mouseover", () => {changeColor(div) }, {once: true});
+   });
     
 
+   function askPrompt (value) {
+    prompt("what size of grid you want?","")
+   }
+
+   //askPrompt()
+  container.before(createButton)
 
 
 
+console.log(askPrompt)
 //colores de divs cambian cuando les pasas por encima el cursor.
 //usar evento mousemove
 //mouse move debe ser declarano = null al final del body function para que no se active mas

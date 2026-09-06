@@ -1,7 +1,7 @@
 const container = document.querySelector(".container");
 const createButton = document.createElement("button");
                        createButton.id = "gridButton"
-                       createButton.textContent = "Hola mundo"
+                       createButton.textContent = "Change size"
 
 container.before(createButton)
                        
@@ -58,6 +58,8 @@ const animation = () => {
 
     animation()
 
+
+gridButton.addEventListener("click", () => {
   const askPrompt = prompt("set a grid size less than 200","it works like a e.g 4x4 grid");
     if  (isNaN(askPrompt) ) {
         alert("ERROR: DETECTED A NOT NUMBER ELEMENT")
@@ -69,7 +71,7 @@ const animation = () => {
            divGenerator(askPrompt)
            animation()
         }
-
+    })
 
    
 

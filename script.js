@@ -52,7 +52,7 @@ const animation = () => {
   const gridDivs = document.querySelectorAll(".grid");
     
  gridDivs.forEach((div) => { 
-    div.addEventListener("mouseover", () => {changeColor(div) }, {once: true});
+    div.addEventListener("mouseover", () => {changeColor(div) }, );
    });
    }
 
@@ -60,7 +60,7 @@ const animation = () => {
 
 
 gridButton.addEventListener("click", () => {
-  const askPrompt = prompt("set a grid size less than 200","it works like a e.g 4x4 grid");
+  const askPrompt = prompt("set a grid size less than 100","it works like a e.g 4x4 grid");
     if  (isNaN(askPrompt) ) {
         alert("ERROR: DETECTED A NOT NUMBER ELEMENT")
     ;}
@@ -72,6 +72,7 @@ gridButton.addEventListener("click", () => {
            animation()
         }
     })
+
 
    
 

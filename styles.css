@@ -8,21 +8,29 @@
     width: 360px;
     height: 360px; 
     margin: auto;
-    border: 1px solid black;
+    
     background-color: white;
      display: flex;
   flex-wrap: wrap; 
+  box-shadow: 1px 1px 7px 1px;
 }
 
 .grid {
-    border: 1px solid black;
+    
     background-color: rgb(250, 235, 215);
 }
 #gridButton {
   display: flex;
   justify-content: center;
-  
+  align-items: center;
   height: 20px;
   width: 100px;
-  margin: 70px auto 100px
+  margin: 70px auto 100px;
+  background-color: #d95019;
+  box-shadow: 1px 1px 7px 1px;
+  border: 1px solid black;
+  border-radius: 14px;
+}
+body{
+  background-color: #323634;
 }

@@ -2,12 +2,14 @@ const container = document.querySelector(".container");
 const createButton = document.createElement("button");
                        createButton.id = "gridButton"
                        createButton.textContent = "Hola mundo"
+
+container.before(createButton)
                        
 
 //Funcion para crear el grid
 function divGenerator (number) {
     
-    if (number < 0 || number > 64) {
+    if (number < 0 || number > 100) {
         return alert("limit exceeded")
     }
     else {
@@ -26,7 +28,7 @@ function divGenerator (number) {
 }
 
 divGenerator(10);
-const gridDivs = document.querySelectorAll(".grid");
+
 
 
 //retorna una varaible con un color rgb aleatorio
@@ -42,20 +44,37 @@ function changeColor(objective) {
     return objective.style.backgroundColor = rgbColor(); 
     
 }
-
+//this sets the grid to 0
+const removeGrid = () => { container.innerHTML = "";}
 
  
-gridDivs.forEach((div) => { 
+const animation = () => {
+  const gridDivs = document.querySelectorAll(".grid");
+    
+ gridDivs.forEach((div) => { 
     div.addEventListener("mouseover", () => {changeColor(div) }, {once: true});
    });
-    
-
-   function askPrompt (value) {
-    prompt("what size of grid you want?","")
    }
 
+    animation()
+
+  const askPrompt = prompt("set a grid size less than 200","it works like a e.g 4x4 grid");
+    if  (isNaN(askPrompt) ) {
+        alert("ERROR: DETECTED A NOT NUMBER ELEMENT")
+    ;}
+    if (askPrompt > 100 || askPrompt <= 0)  {
+        alert("Error at Grid Range, please select a size between 1 and 100");
+    }
+    else { removeGrid()
+           divGenerator(askPrompt)
+           animation()
+        }
+
+
+   
+
    //askPrompt()
-  container.before(createButton)
+  
 
 
 
